@@ -1,6 +1,8 @@
-# G5_ppc64-linux
+# Linux on a G5 ppc64
+- http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
 
 Fedora 25 ppc64
+- https://fedoraproject.org/wiki/Architectures/PowerPC
 
 # mac partition
 parted /dev/sda
@@ -34,8 +36,11 @@ lsblk -o NAME,SIZE,UUID,LABEL
     ├─sda3   228M 26507748-8918-49e0-9d3e-8e8c7b3da04d BOOT
     ├─sda1  31.5K                                      
     └─sda6 133.8G                                      
+# grub2
+- http://cynic.cc/blog/posts/running_grub2_on_powerpc_macs/
+- https://www.gnu.org/software/grub/manual/grub.html#Embedded-configuration
 
-embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg via UUID, example:
+embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg via UUID:
 
 cat grub.cfg
 
@@ -77,22 +82,27 @@ hdir :
 humount /dev/sda2
 
 # boot from OpenFirmware
+- www.netneurotic.de/mac/openfirmware.html
+- http://osxbook.com/book/bonus/ancient/whatismacosx/arch_boot.html
+
 run grub from default HFS (Apple_Bootstrap) partition
 
-0 > boot hd:,grub
+    0 > boot hd:,grub
 
 # linux
 cat /etc/fedora-release
 
     Fedora release 25 (Twenty Five)
 
-# autoload modules
+* autoload modules
+
 cat /etc/sysconfig/modules/something.modules
 
     modprobe i2c-powermac
     modprobe rack-meter
 
-# thermal
+* thermal and scaling are working
+
 find /sys -iname "*temp*"
 
     /sys/kernel/debug/tracing/events/thermal/thermal_temperature
@@ -142,5 +152,5 @@ cat /proc/cpuinfo
     pmac flags      : 00000000
     L2 cache        : 512K unified
     pmac-generation : NewWorld
-scaling is working
+
 
