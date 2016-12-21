@@ -1,8 +1,13 @@
 # Linux on a G5 ppc64
 - http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
 
-Fedora 25 ppc64
+Fedora 25
 - https://fedoraproject.org/wiki/Architectures/PowerPC
+- https://archive.fedoraproject.org/pub/fedora-secondary/releases/25/Everything/ppc64/iso/Fedora-Everything-netinst-ppc64-25-1.2.iso
+
+Debian 8.6.0
+- https://www.debian.org/CD/netinst/
+- http://cdimage.debian.org/debian-cd/8.6.0/powerpc/iso-cd/debian-8.6.0-powerpc-netinst.iso
 
 # mac partition
 parted /dev/sda
@@ -40,21 +45,21 @@ lsblk -o NAME,SIZE,UUID,LABEL
 - http://cynic.cc/blog/posts/running_grub2_on_powerpc_macs/
 - https://www.gnu.org/software/grub/manual/grub.html#Embedded-configuration
 
-embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg via UUID:
+grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
+
+a full grub image it's bigger than your default Apple_Bootstrap partition, so you have to make a bigger one, here I have 15M at /dev/sda2
+
+embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
 
 cat grub.cfg
 
-    search --no-floppy --fs-uuid --set=root 26507748-8918-49e0-9d3e-8e8c7b3da04d
+    search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
     set prefix=($root)/boot/grub2
     configfile /boot/grub2/grub.cfg
 
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
 
     grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
-
-grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
-
-this .img it's bigger than your default Apple_Bootstrap partition, so you have to make a bigger one, here I have 15M
 
 grub2-ofpathname /dev/sda2
 
