@@ -47,9 +47,13 @@ grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/pow
 
     grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
 
-grub.img can be cross-compiled on a 32bit HOST too
+grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
 
 this .img it's bigger than your default Apple_Bootstrap partition, so you have to make a bigger one, here I have 15M
+
+grub2-ofpathname /dev/sda2
+
+    /ht@0,f2000000/pci@7/k2-sata-root@c/disk@0:b
 
 # mac-blessing with hfsutils
 hmount /dev/sda2
@@ -77,10 +81,66 @@ run grub from default HFS (Apple_Bootstrap) partition
 
 0 > boot hd:,grub
 
+# linux
+cat /etc/fedora-release
+
+    Fedora release 25 (Twenty Five)
+
 # autoload modules
 cat /etc/sysconfig/modules/something.modules
 
     modprobe i2c-powermac
     modprobe rack-meter
 
+# thermal
+find /sys -iname "*temp*"
+
+    /sys/kernel/debug/tracing/events/thermal/thermal_temperature
+    /sys/devices/platform/windfarm.0/cpu-amb-temp-1
+    /sys/devices/platform/windfarm.0/cpu-diode-temp-0
+    /sys/devices/platform/windfarm.0/cpu-amb-temp-0
+    /sys/devices/platform/windfarm.0/hd-temp
+    /sys/devices/platform/windfarm.0/cpu-diode-temp-1
+    /sys/devices/platform/windfarm.0/backside-temp
+    /sys/devices/platform/temperature
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@96
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@96/temperature@0
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@94
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@94/temperature@0
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/supply-monitor@5a/temperature@0
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/supply-monitor@58/temperature@0
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@98
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@98/external-temperature@1
+    /sys/firmware/devicetree/base/u3@0,f8000000/i2c@f8001000/temp-monitor@98/internal-temperature@0
+    /sys/firmware/devicetree/base/sep/temperatures
+    /sys/firmware/devicetree/base/sep/temperatures/cpu-b-diode-temp@10
+    /sys/firmware/devicetree/base/sep/temperatures/cpu-a-diode-temp@b
+    /sys/firmware/devicetree/base/sep/thermostats/overtemp*-signal@5800
+    /sys/bus/platform/devices/temperature
+cat /sys/devices/platform/windfarm.0/cpu-diode-temp-*
+
+    34.794
+    31.604
+cat /proc/cpuinfo
+
+    processor       : 0
+    cpu             : PPC970, altivec supported
+    clock           : 1304.400000MHz
+    revision        : 2.2 (pvr 0039 0202)
+
+    processor       : 1
+    cpu             : PPC970, altivec supported
+    clock           : 1304.400000MHz
+    revision        : 2.2 (pvr 0039 0202)
+
+    timebase        : 33333333
+    platform        : PowerMac
+    model           : PowerMac7,3
+    machine         : PowerMac7,3
+    motherboard     : PowerMac7,3 MacRISC4 Power Macintosh 
+    detected as     : 336 (PowerMac G5)
+    pmac flags      : 00000000
+    L2 cache        : 512K unified
+    pmac-generation : NewWorld
+scaling is working
 
