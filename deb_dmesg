@@ -1,0 +1,530 @@
+Jan  1 02:43:07 g5 kernel: [    0.000000] Allocated 131072 bytes for 32 pacas at c00000000ffe0000
+Jan  1 02:43:07 g5 kernel: [    0.000000] DART table allocated at: c00000007f000000
+Jan  1 02:43:07 g5 kernel: [    0.000000] Using PowerMac machine description
+Jan  1 02:43:07 g5 kernel: [    0.000000] Page orders: linear mapping = 24, virtual = 12, io = 12, vmemmap = 24
+Jan  1 02:43:07 g5 kernel: [    0.000000] kvm_cma: CMA: reserved 128 MiB
+Jan  1 02:43:07 g5 kernel: [    0.000000] Found initrd at 0xc000000001a00000:0xc000000002a57800
+Jan  1 02:43:07 g5 kernel: [    0.000000] Found U3 memory controller & host bridge @ 0xf8000000 revision: 0x35
+Jan  1 02:43:07 g5 kernel: [    0.000000] Mapped at 0xd000080080000000
+Jan  1 02:43:07 g5 kernel: [    0.000000] Found a K2 mac-io controller, rev: 96, mapped at 0xd000080080050000
+Jan  1 02:43:07 g5 kernel: [    0.000000] PowerMac motherboard: PowerMac G5
+Jan  1 02:43:07 g5 kernel: [    0.000000] DART IOMMU initialized for U3 type chipset
+Jan  1 02:43:07 g5 kernel: [    0.000000] bootconsole [udbg0] enabled
+Jan  1 02:43:07 g5 kernel: [    0.000000] CPU maps initialized for 1 thread per core
+Jan  1 02:43:07 g5 kernel: [    0.000000]  (thread shift is 0)
+Jan  1 02:43:07 g5 kernel: [    0.000000] Freed 65536 bytes for unused pacas
+Jan  1 02:43:07 g5 kernel: [    0.000000] Starting Linux PPC64 #1 SMP Debian 3.16.36-1+deb8u2 (2016-10-19)
+Jan  1 02:43:07 g5 kernel: [    0.000000] -----------------------------------------------------
+Jan  1 02:43:07 g5 kernel: [    0.000000] ppc64_pft_size                = 0x0
+Jan  1 02:43:07 g5 kernel: [    0.000000] physicalMemorySize            = 0xa0000000
+Jan  1 02:43:07 g5 kernel: [    0.000000] htab_address                  = 0xc00000011c000000
+Jan  1 02:43:07 g5 kernel: [    0.000000] htab_hash_mask                = 0x7ffff
+Jan  1 02:43:07 g5 kernel: [    0.000000] -----------------------------------------------------
+Jan  1 02:43:07 g5 kernel: [    0.000000] Initializing cgroup subsys cpuset
+Jan  1 02:43:07 g5 kernel: [    0.000000] Initializing cgroup subsys cpu
+Jan  1 02:43:07 g5 kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Jan  1 02:43:07 g5 kernel: [    0.000000] Linux version 3.16.0-4-powerpc64 (debian-kernel@lists.debian.org) (gcc version 4.8.4 (Debian 4.8.4-1) ) #1 SMP Debian 3.16.36-1+deb8u2 (2016-10-19)
+Jan  1 02:43:07 g5 kernel: [    0.000000] [boot]0012 Setup Arch
+Jan  1 02:43:07 g5 kernel: [    0.000000] Top of RAM: 0x120000000, Total RAM: 0xa0000000
+Jan  1 02:43:07 g5 kernel: [    0.000000] Memory hole size: 2048MB
+Jan  1 02:43:07 g5 kernel: [    0.000000] Found U3-AGP PCI host bridge.  Firmware bus number: 240->255
+Jan  1 02:43:07 g5 kernel: [    0.000000] PCI host bridge /pci@0,f0000000  ranges:
+Jan  1 02:43:07 g5 kernel: [    0.000000]  MEM 0x00000000f1000000..0x00000000f1ffffff -> 0x00000000f1000000 
+Jan  1 02:43:07 g5 kernel: [    0.000000]   IO 0x00000000f0000000..0x00000000f07fffff -> 0x0000000000000000
+Jan  1 02:43:07 g5 kernel: [    0.000000]  MEM 0x0000000090000000..0x000000009fffffff -> 0x0000000090000000 
+Jan  1 02:43:07 g5 kernel: [    0.000000] Can't get bus-range for /ht@0,f2000000, assume bus 0
+Jan  1 02:43:07 g5 kernel: [    0.000000] Found U3-HT PCI host bridge.  Firmware bus number: 0->239
+Jan  1 02:43:07 g5 kernel: [    0.000000] PCI host bridge /ht@0,f2000000 (primary) ranges:
+Jan  1 02:43:07 g5 kernel: [    0.000000] via-pmu: Server Mode is disabled
+Jan  1 02:43:07 g5 kernel: [    0.000000] PMU driver v2 initialized for Core99, firmware: 0c
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: Checking bank 0...
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: gen0=956, gen1=955
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: Active bank is: 0
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: OF partition at 0x410
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: XP partition at 0x1020
+Jan  1 02:43:07 g5 kernel: [    0.000000] nvram: NR partition at 0x1120
+Jan  1 02:43:07 g5 kernel: [    0.000000] Zone ranges:
+Jan  1 02:43:07 g5 kernel: [    0.000000]   DMA      [mem 0x00000000-0x11fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.000000]   Normal   empty
+Jan  1 02:43:07 g5 kernel: [    0.000000] Movable zone start for each node
+Jan  1 02:43:07 g5 kernel: [    0.000000] Early memory node ranges
+Jan  1 02:43:07 g5 kernel: [    0.000000]   node   0: [mem 0x00000000-0x7fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.000000]   node   0: [mem 0x100000000-0x11fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.000000] On node 0 totalpages: 40960
+Jan  1 02:43:07 g5 kernel: [    0.000000]   DMA zone: 35 pages used for memmap
+Jan  1 02:43:07 g5 kernel: [    0.000000]   DMA zone: 0 pages reserved
+Jan  1 02:43:07 g5 kernel: [    0.000000]   DMA zone: 40960 pages, LIFO batch:1
+Jan  1 02:43:07 g5 kernel: [    0.000000] [boot]0015 Setup Done
+Jan  1 02:43:07 g5 kernel: [    0.000000] PERCPU: Embedded 2 pages/cpu @c000000002c00000 s101248 r0 d29824 u524288
+Jan  1 02:43:07 g5 kernel: [    0.000000] pcpu-alloc: s101248 r0 d29824 u524288 alloc=1*1048576
+Jan  1 02:43:07 g5 kernel: [    0.000000] pcpu-alloc: [0] 0 1 
+Jan  1 02:43:07 g5 kernel: [    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 40925
+Jan  1 02:43:07 g5 kernel: [    0.000000] Policy zone: DMA
+Jan  1 02:43:07 g5 kernel: [    0.000000] Kernel command line: root=UUID=5e0169af-18be-48f6-9d34-d268a8b92c68 ro video=ofonly 
+Jan  1 02:43:07 g5 kernel: [    0.000000] PID hash table entries: 4096 (order: -1, 32768 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.000000] Sorting __ex_table...
+Jan  1 02:43:07 g5 kernel: [    0.000000] Memory: 2359424K/2621440K available (7360K kernel code, 1792K rwdata, 1840K rodata, 960K init, 2071K bss, 262016K reserved)
+Jan  1 02:43:07 g5 kernel: [    0.000000] Hierarchical RCU implementation.
+Jan  1 02:43:07 g5 kernel: [    0.000000] 	CONFIG_RCU_FANOUT set to non-default value of 32
+Jan  1 02:43:07 g5 kernel: [    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+Jan  1 02:43:07 g5 kernel: [    0.000000] 	RCU restricting CPUs from NR_CPUS=32 to nr_cpu_ids=2.
+Jan  1 02:43:07 g5 kernel: [    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+Jan  1 02:43:07 g5 kernel: [    0.000000] NR_IRQS:512 nr_irqs:512 16
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Resetting
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Setting up MPIC " MPIC 1   " version 1.2 at 80040000, max 2 CPUs
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: ISU size: 120, shift: 7, mask: 7f
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Initializing for 120 sources
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Resetting
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Setting up MPIC " MPIC 2   " version 1.2 at f8040000, max 2 CPUs
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: ISU size: 124, shift: 7, mask: 7f
+Jan  1 02:43:07 g5 kernel: [    0.000000] mpic: Initializing for 124 sources
+Jan  1 02:43:07 g5 kernel: [    0.000000] /u3@0,f8000000/mpic@f8040000: hooking up to IRQ 56
+Jan  1 02:43:07 g5 kernel: [    0.000000] time_init: decrementer frequency = 33.333333 MHz
+Jan  1 02:43:07 g5 kernel: [    0.000000] time_init: processor frequency   = 2000.000000 MHz
+Jan  1 02:43:07 g5 kernel: [    0.000003] clocksource: timebase mult[1e000005] shift[24] registered
+Jan  1 02:43:07 g5 kernel: [    0.000286] clockevent: decrementer mult[8888887] shift[32] cpu[0]
+Jan  1 02:43:07 g5 kernel: [    0.000727] Console: colour dummy device 80x25
+Jan  1 02:43:07 g5 kernel: [    0.000967] console [tty0] enabled
+Jan  1 02:43:07 g5 kernel: [    0.001186] bootconsole [udbg0] disabled
+Jan  1 02:43:07 g5 kernel: [    0.001591] pid_max: default: 32768 minimum: 301
+Jan  1 02:43:07 g5 kernel: [    0.001792] Security Framework initialized
+Jan  1 02:43:07 g5 kernel: [    0.001813] AppArmor: AppArmor disabled by boot time parameter
+Jan  1 02:43:07 g5 kernel: [    0.001819] Yama: disabled by default; enable with sysctl kernel.yama.*
+Jan  1 02:43:07 g5 kernel: [    0.001913] Dentry cache hash table entries: 524288 (order: 6, 4194304 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.005816] Inode-cache hash table entries: 262144 (order: 5, 2097152 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.007803] Mount-cache hash table entries: 8192 (order: 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.007818] Mountpoint-cache hash table entries: 8192 (order: 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.008693] Initializing cgroup subsys memory
+Jan  1 02:43:07 g5 kernel: [    0.009136] Initializing cgroup subsys devices
+Jan  1 02:43:07 g5 kernel: [    0.009174] Initializing cgroup subsys freezer
+Jan  1 02:43:07 g5 kernel: [    0.009184] Initializing cgroup subsys net_cls
+Jan  1 02:43:07 g5 kernel: [    0.009198] Initializing cgroup subsys blkio
+Jan  1 02:43:07 g5 kernel: [    0.009209] Initializing cgroup subsys perf_event
+Jan  1 02:43:07 g5 kernel: [    0.009220] Initializing cgroup subsys net_prio
+Jan  1 02:43:07 g5 kernel: [    0.009283] ftrace: allocating 20418 entries in 8 pages
+Jan  1 02:43:07 g5 kernel: [    0.026701] PowerMac SMP probe found 2 cpus
+Jan  1 02:43:07 g5 kernel: [    0.026883] KeyWest i2c @0xf8001003 irq 16 /u3@0,f8000000/i2c@f8001000
+Jan  1 02:43:07 g5 kernel: [    0.026893]  channel 0 bus <multibus>
+Jan  1 02:43:07 g5 kernel: [    0.026898]  channel 1 bus <multibus>
+Jan  1 02:43:07 g5 kernel: [    0.026970] KeyWest i2c @0x80018000 irq 26 /ht@0,f2000000/pci@3/mac-io@7/i2c@18000
+Jan  1 02:43:07 g5 kernel: [    0.026980]  channel 0 bus <multibus>
+Jan  1 02:43:07 g5 kernel: [    0.027040] PMU i2c /ht@0,f2000000/pci@3/mac-io@7/via-pmu@16000/pmu-i2c
+Jan  1 02:43:07 g5 kernel: [    0.027047]  channel 1 bus <multibus>
+Jan  1 02:43:07 g5 kernel: [    0.027053]  channel 2 bus <multibus>
+Jan  1 02:43:07 g5 kernel: [    0.027136] Processor timebase sync using Pulsar i2c clock
+Jan  1 02:43:07 g5 kernel: [    0.027142] mpic: requesting IPIs...
+Jan  1 02:43:07 g5 kernel: [    0.027248] PPC970/FX/MP performance monitor hardware support registered
+Jan  1 02:43:07 g5 kernel: [    0.072892] Brought up 2 CPUs
+Jan  1 02:43:07 g5 kernel: [    0.075102] devtmpfs: initialized
+Jan  1 02:43:07 g5 kernel: [    0.131389] EEH: devices created
+Jan  1 02:43:07 g5 kernel: [    0.136727] NET: Registered protocol family 16
+Jan  1 02:43:07 g5 kernel: [    0.136773] eeh_init: Platform EEH operation not found
+Jan  1 02:43:07 g5 kernel: [    0.136883] IBM eBus Device Driver
+Jan  1 02:43:07 g5 kernel: [    0.137410] cpuidle: using governor ladder
+Jan  1 02:43:07 g5 kernel: [    0.137421] cpuidle: using governor menu
+Jan  1 02:43:07 g5 kernel: [    0.139195] PCI: Probing PCI hardware
+Jan  1 02:43:07 g5 kernel: [    0.139305] PCI host bridge to bus 0000:f0
+Jan  1 02:43:07 g5 kernel: [    0.139315] pci_bus 0000:f0: root bus resource [io  0x10000-0x80ffff] (bus address [0x0000-0x7fffff])
+Jan  1 02:43:07 g5 kernel: [    0.139324] pci_bus 0000:f0: root bus resource [mem 0xf1000000-0xf1ffffff]
+Jan  1 02:43:07 g5 kernel: [    0.139331] pci_bus 0000:f0: root bus resource [mem 0x90000000-0x9fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.139339] pci_bus 0000:f0: root bus resource [bus f0-ff]
+Jan  1 02:43:07 g5 kernel: [    0.139349] pci_bus 0000:f0: busn_res: [bus f0-ff] end is updated to ff
+Jan  1 02:43:07 g5 kernel: [    0.139378] pci 0000:f0:0b.0: [106b:0059] type 00 class 0x060000
+Jan  1 02:43:07 g5 kernel: [    0.139544] pci 0000:f0:10.0: [10de:0321] type 00 class 0x030000
+Jan  1 02:43:07 g5 kernel: [    0.139565] pci 0000:f0:10.0: reg 0x10: [mem 0x91000000-0x91ffffff]
+Jan  1 02:43:07 g5 kernel: [    0.139575] pci 0000:f0:10.0: reg 0x14: [mem 0x98000000-0x9fffffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.139612] pci 0000:f0:10.0: reg 0x30: [mem 0x90000000-0x9001ffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.176545] IOMMU table initialized, virtual merging enabled
+Jan  1 02:43:07 g5 kernel: [    0.176619] pci_bus 0000:f0: busn_res: [bus f0-ff] end is updated to f0
+Jan  1 02:43:07 g5 kernel: [    0.176723] PCI host bridge to bus 0001:00
+Jan  1 02:43:07 g5 kernel: [    0.176731] pci_bus 0001:00: root bus resource [io  0x820000-0xc1ffff] (bus address [0x0000-0x3fffff])
+Jan  1 02:43:07 g5 kernel: [    0.176740] pci_bus 0001:00: root bus resource [mem 0xfa000000-0xffffffff]
+Jan  1 02:43:07 g5 kernel: [    0.176747] pci_bus 0001:00: root bus resource [mem 0x80000000-0x8fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.176754] pci_bus 0001:00: root bus resource [mem 0xa0000000-0xefffffff]
+Jan  1 02:43:07 g5 kernel: [    0.176761] pci_bus 0001:00: root bus resource [bus 00-ef]
+Jan  1 02:43:07 g5 kernel: [    0.176770] pci_bus 0001:00: busn_res: [bus 00-ef] end is updated to ff
+Jan  1 02:43:07 g5 kernel: [    0.176793] pci 0001:00:00.0: [106b:0057] type 00 class 0x060000
+Jan  1 02:43:07 g5 kernel: [    0.176911] pci 0001:00:01.0: [1022:7450] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177069] pci 0001:00:02.0: [1022:7450] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177206] pci 0001:00:03.0: [106b:0045] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177364] pci 0001:00:04.0: [106b:0046] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177511] pci 0001:00:05.0: [106b:0047] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177657] pci 0001:00:06.0: [106b:0048] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.177801] pci 0001:00:07.0: [106b:0049] type 01 class 0x060400
+Jan  1 02:43:07 g5 kernel: [    0.178065] pci 0001:00:01.0: PCI bridge to [bus 06]
+Jan  1 02:43:07 g5 kernel: [    0.178165] pci 0001:00:02.0: PCI bridge to [bus 07]
+Jan  1 02:43:07 g5 kernel: [    0.178265] pci 0001:01:07.0: [106b:0041] type 00 class 0xff0000
+Jan  1 02:43:07 g5 kernel: [    0.178279] pci 0001:01:07.0: reg 0x10: [mem 0x80000000-0x8007ffff]
+Jan  1 02:43:07 g5 kernel: [    0.178413] pci 0001:01:08.0: [106b:0040] type 00 class 0x0c0310
+Jan  1 02:43:07 g5 kernel: [    0.178427] pci 0001:01:08.0: reg 0x10: [mem 0x80081000-0x80081fff]
+Jan  1 02:43:07 g5 kernel: [    0.178552] pci 0001:01:09.0: [106b:0040] type 00 class 0x0c0310
+Jan  1 02:43:07 g5 kernel: [    0.178565] pci 0001:01:09.0: reg 0x10: [mem 0x80080000-0x80080fff]
+Jan  1 02:43:07 g5 kernel: [    0.178693] pci 0001:00:03.0: PCI bridge to [bus 01]
+Jan  1 02:43:07 g5 kernel: [    0.178706] pci 0001:00:03.0:   bridge window [mem 0x80000000-0x800fffff]
+Jan  1 02:43:07 g5 kernel: [    0.178713] pci 0001:00:03.0:   bridge window [mem 0x00000000-0x000fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.178873] pci 0001:02:0b.0: [1033:0035] type 00 class 0x0c0310
+Jan  1 02:43:07 g5 kernel: [    0.178891] pci 0001:02:0b.0: reg 0x10: [mem 0x80102000-0x80102fff]
+Jan  1 02:43:07 g5 kernel: [    0.178956] pci 0001:02:0b.0: supports D1 D2
+Jan  1 02:43:07 g5 kernel: [    0.178959] pci 0001:02:0b.0: PME# supported from D0 D1 D2 D3hot D3cold
+Jan  1 02:43:07 g5 kernel: [    0.179073] pci 0001:02:0b.1: [1033:0035] type 00 class 0x0c0310
+Jan  1 02:43:07 g5 kernel: [    0.179090] pci 0001:02:0b.1: reg 0x10: [mem 0x80101000-0x80101fff]
+Jan  1 02:43:07 g5 kernel: [    0.179153] pci 0001:02:0b.1: supports D1 D2
+Jan  1 02:43:07 g5 kernel: [    0.179157] pci 0001:02:0b.1: PME# supported from D0 D1 D2 D3hot D3cold
+Jan  1 02:43:07 g5 kernel: [    0.179265] pci 0001:02:0b.2: [1033:00e0] type 00 class 0x0c0320
+Jan  1 02:43:07 g5 kernel: [    0.179282] pci 0001:02:0b.2: reg 0x10: [mem 0x80100000-0x801000ff]
+Jan  1 02:43:07 g5 kernel: [    0.179344] pci 0001:02:0b.2: supports D1 D2
+Jan  1 02:43:07 g5 kernel: [    0.179348] pci 0001:02:0b.2: PME# supported from D0 D1 D2 D3hot D3cold
+Jan  1 02:43:07 g5 kernel: [    0.179459] pci 0001:00:04.0: PCI bridge to [bus 02]
+Jan  1 02:43:07 g5 kernel: [    0.179472] pci 0001:00:04.0:   bridge window [mem 0x80100000-0x801fffff]
+Jan  1 02:43:07 g5 kernel: [    0.179478] pci 0001:00:04.0:   bridge window [mem 0x00000000-0x000fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.179617] pci 0001:03:0d.0: [106b:0043] type 00 class 0xff0000
+Jan  1 02:43:07 g5 kernel: [    0.179630] pci 0001:03:0d.0: reg 0x10: [mem 0x80204000-0x80207fff]
+Jan  1 02:43:07 g5 kernel: [    0.179756] pci 0001:03:0e.0: [106b:0042] type 00 class 0x0c0010
+Jan  1 02:43:07 g5 kernel: [    0.179772] pci 0001:03:0e.0: reg 0x10: [mem 0x80200000-0x80200fff]
+Jan  1 02:43:07 g5 kernel: [    0.179830] pci 0001:03:0e.0: supports D1 D2
+Jan  1 02:43:07 g5 kernel: [    0.179833] pci 0001:03:0e.0: PME# supported from D0 D1 D2 D3hot
+Jan  1 02:43:07 g5 kernel: [    0.179938] pci 0001:00:05.0: PCI bridge to [bus 03]
+Jan  1 02:43:07 g5 kernel: [    0.179953] pci 0001:00:05.0:   bridge window [mem 0x80200000-0x802fffff]
+Jan  1 02:43:07 g5 kernel: [    0.179959] pci 0001:00:05.0:   bridge window [mem 0x00000000-0x000fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.180097] pci 0001:04:0f.0: [106b:004c] type 00 class 0x020000
+Jan  1 02:43:07 g5 kernel: [    0.180112] pci 0001:04:0f.0: reg 0x10: [mem 0x80400000-0x805fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180149] pci 0001:04:0f.0: reg 0x30: [mem 0x80300000-0x803fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.180247] pci 0001:00:06.0: PCI bridge to [bus 04]
+Jan  1 02:43:07 g5 kernel: [    0.180262] pci 0001:00:06.0:   bridge window [mem 0x80300000-0x805fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180268] pci 0001:00:06.0:   bridge window [mem 0x00000000-0x000fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.180386] pci 0001:05:0c.0: [1166:0240] type 00 class 0x01018f
+Jan  1 02:43:07 g5 kernel: [    0.180400] pci 0001:05:0c.0: reg 0x10: [io  0x820000-0x820007]
+Jan  1 02:43:07 g5 kernel: [    0.180409] pci 0001:05:0c.0: reg 0x14: [io  0x820000-0x820003]
+Jan  1 02:43:07 g5 kernel: [    0.180419] pci 0001:05:0c.0: reg 0x18: [io  0x820000-0x820007]
+Jan  1 02:43:07 g5 kernel: [    0.180428] pci 0001:05:0c.0: reg 0x1c: [io  0x820000-0x820003]
+Jan  1 02:43:07 g5 kernel: [    0.180437] pci 0001:05:0c.0: reg 0x20: [io  0x820000-0x82000f]
+Jan  1 02:43:07 g5 kernel: [    0.180446] pci 0001:05:0c.0: reg 0x24: [mem 0x80600000-0x80601fff]
+Jan  1 02:43:07 g5 kernel: [    0.180570] pci 0001:00:07.0: PCI bridge to [bus 05]
+Jan  1 02:43:07 g5 kernel: [    0.180584] pci 0001:00:07.0:   bridge window [mem 0x80600000-0x806fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180591] pci 0001:00:07.0:   bridge window [mem 0x00000000-0x000fffff pref]
+Jan  1 02:43:07 g5 kernel: [    0.180643] pci_bus 0001:00: busn_res: [bus 00-ff] end is updated to 07
+Jan  1 02:43:07 g5 kernel: [    0.180785] pci_bus 0000:f0: resource 4 [io  0x10000-0x80ffff]
+Jan  1 02:43:07 g5 kernel: [    0.180789] pci_bus 0000:f0: resource 5 [mem 0xf1000000-0xf1ffffff]
+Jan  1 02:43:07 g5 kernel: [    0.180793] pci_bus 0000:f0: resource 6 [mem 0x90000000-0x9fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.180834] pci 0001:00:01.0: PCI bridge to [bus 06]
+Jan  1 02:43:07 g5 kernel: [    0.180845] pci 0001:00:02.0: PCI bridge to [bus 07]
+Jan  1 02:43:07 g5 kernel: [    0.180855] pci 0001:00:03.0: PCI bridge to [bus 01]
+Jan  1 02:43:07 g5 kernel: [    0.180862] pci 0001:00:03.0:   bridge window [mem 0x80000000-0x800fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180872] pci 0001:00:04.0: PCI bridge to [bus 02]
+Jan  1 02:43:07 g5 kernel: [    0.180879] pci 0001:00:04.0:   bridge window [mem 0x80100000-0x801fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180888] pci 0001:00:05.0: PCI bridge to [bus 03]
+Jan  1 02:43:07 g5 kernel: [    0.180895] pci 0001:00:05.0:   bridge window [mem 0x80200000-0x802fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180904] pci 0001:00:06.0: PCI bridge to [bus 04]
+Jan  1 02:43:07 g5 kernel: [    0.180911] pci 0001:00:06.0:   bridge window [mem 0x80300000-0x805fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180920] pci 0001:00:07.0: PCI bridge to [bus 05]
+Jan  1 02:43:07 g5 kernel: [    0.180928] pci 0001:00:07.0:   bridge window [mem 0x80600000-0x806fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180937] pci_bus 0001:00: resource 4 [io  0x820000-0xc1ffff]
+Jan  1 02:43:07 g5 kernel: [    0.180941] pci_bus 0001:00: resource 5 [mem 0xfa000000-0xffffffff]
+Jan  1 02:43:07 g5 kernel: [    0.180944] pci_bus 0001:00: resource 6 [mem 0x80000000-0x8fffffff]
+Jan  1 02:43:07 g5 kernel: [    0.180948] pci_bus 0001:00: resource 7 [mem 0xa0000000-0xefffffff]
+Jan  1 02:43:07 g5 kernel: [    0.180952] pci_bus 0001:01: resource 1 [mem 0x80000000-0x800fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180956] pci_bus 0001:02: resource 1 [mem 0x80100000-0x801fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180960] pci_bus 0001:03: resource 1 [mem 0x80200000-0x802fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180963] pci_bus 0001:04: resource 1 [mem 0x80300000-0x805fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180967] pci_bus 0001:05: resource 1 [mem 0x80600000-0x806fffff]
+Jan  1 02:43:07 g5 kernel: [    0.180969] PCI: Probing PCI hardware done
+Jan  1 02:43:07 g5 kernel: [    0.183611] opal: Node not found
+Jan  1 02:43:07 g5 kernel: [    0.183640] opal_async_comp_init: Opal node not found
+Jan  1 02:43:07 g5 kernel: [    0.202055] vgaarb: device added: PCI:0000:f0:10.0,decodes=io+mem,owns=mem,locks=none
+Jan  1 02:43:07 g5 kernel: [    0.202101] vgaarb: loaded
+Jan  1 02:43:07 g5 kernel: [    0.202105] vgaarb: bridge control possible 0000:f0:10.0
+Jan  1 02:43:07 g5 kernel: [    0.202359] SCSI subsystem initialized
+Jan  1 02:43:07 g5 kernel: [    0.202471] libata version 3.00 loaded.
+Jan  1 02:43:07 g5 kernel: [    0.202878] Switched to clocksource timebase
+Jan  1 02:43:07 g5 kernel: [    0.213395] NET: Registered protocol family 2
+Jan  1 02:43:07 g5 kernel: [    0.213934] TCP established hash table entries: 32768 (order: 2, 262144 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.214187] TCP bind hash table entries: 32768 (order: 3, 524288 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.214984] TCP: Hash tables configured (established 32768 bind 32768)
+Jan  1 02:43:07 g5 kernel: [    0.215086] TCP: reno registered
+Jan  1 02:43:07 g5 kernel: [    0.215103] UDP hash table entries: 2048 (order: 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.215175] UDP-Lite hash table entries: 2048 (order: 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    0.215435] NET: Registered protocol family 1
+Jan  1 02:43:07 g5 kernel: [    0.215497] pci 0001:00:01.0: MSI quirk detected; subordinate MSI disabled
+Jan  1 02:43:07 g5 kernel: [    0.215506] pci 0001:00:01.0: AMD8131 rev 12 detected; disabling PCI-X MMRBC
+Jan  1 02:43:07 g5 kernel: [    0.215516] pci 0001:00:02.0: MSI quirk detected; subordinate MSI disabled
+Jan  1 02:43:07 g5 kernel: [    0.215523] pci 0001:00:02.0: AMD8131 rev 12 detected; disabling PCI-X MMRBC
+Jan  1 02:43:07 g5 kernel: [    0.215534] PCI: CLS mismatch (32 != 64), using 128 bytes
+Jan  1 02:43:07 g5 kernel: [    0.215565] pci 0001:01:08.0: enabling device (0000 -> 0002)
+Jan  1 02:43:07 g5 kernel: [    0.270932] pci 0001:01:09.0: enabling device (0000 -> 0002)
+Jan  1 02:43:07 g5 kernel: [    0.326899] pci 0001:02:0b.0: enabling device (0000 -> 0002)
+Jan  1 02:43:07 g5 kernel: [    0.382892] pci 0001:02:0b.1: enabling device (0000 -> 0002)
+Jan  1 02:43:07 g5 kernel: [    0.438892] pci 0001:02:0b.2: enabling device (0004 -> 0006)
+Jan  1 02:43:07 g5 kernel: [    0.439050] Unpacking initramfs...
+Jan  1 02:43:07 g5 kernel: [    1.003246] Freeing initrd memory: 16704K (c000000001a00000 - c000000002a50000)
+Jan  1 02:43:07 g5 kernel: [    1.003937] Hypercall H_BEST_ENERGY not supported
+Jan  1 02:43:07 g5 kernel: [    1.015376] futex hash table entries: 512 (order: 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    1.015486] audit: initializing netlink subsys (disabled)
+Jan  1 02:43:07 g5 kernel: [    1.015527] audit: type=2000 audit(6161.967:1): initialized
+Jan  1 02:43:07 g5 kernel: [    1.016164] HugeTLB registered 16 MB page size, pre-allocated 0 pages
+Jan  1 02:43:07 g5 kernel: [    1.016223] zbud: loaded
+Jan  1 02:43:07 g5 kernel: [    1.016689] VFS: Disk quotas dquot_6.5.2
+Jan  1 02:43:07 g5 kernel: [    1.016773] Dquot-cache hash table entries: 8192 (order 0, 65536 bytes)
+Jan  1 02:43:07 g5 kernel: [    1.017071] msgmni has been set to 4896
+Jan  1 02:43:07 g5 kernel: [    1.017984] alg: No test for stdrng (krng)
+Jan  1 02:43:07 g5 kernel: [    1.018067] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Jan  1 02:43:07 g5 kernel: [    1.018183] io scheduler noop registered
+Jan  1 02:43:07 g5 kernel: [    1.018192] io scheduler deadline registered
+Jan  1 02:43:07 g5 kernel: [    1.018276] io scheduler cfq registered (default)
+Jan  1 02:43:07 g5 kernel: [    1.018598] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+Jan  1 02:43:07 g5 kernel: [    1.018620] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+Jan  1 02:43:07 g5 kernel: [    1.018675] Using unsupported 640x480 NVDA,Display-B at 98004000, depth=8, pitch=1024
+Jan  1 02:43:07 g5 kernel: [    1.024534] Console: switching to colour frame buffer device 80x30
+Jan  1 02:43:07 g5 kernel: [    1.030231] fb0: Open Firmware frame buffer device on /pci@0,f0000000/NVDA,Parent@10/NVDA,Display-B@1
+Jan  1 02:43:07 g5 kernel: [    1.030768] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+Jan  1 02:43:07 g5 kernel: [    1.031514] pmac_zilog: 0.6 (Benjamin Herrenschmidt <benh@kernel.crashing.org>)
+Jan  1 02:43:07 g5 kernel: [    1.035328] Linux agpgart interface v0.103
+Jan  1 02:43:07 g5 kernel: [    1.039089] agpgart-uninorth 0000:f0:0b.0: Apple U3H chipset
+Jan  1 02:43:07 g5 kernel: [    1.047986] agpgart-uninorth 0000:f0:0b.0: configuring for size idx: 64
+Jan  1 02:43:07 g5 kernel: [    1.051866] agpgart-uninorth 0000:f0:0b.0: AGP aperture is 256M @ 0x0
+Jan  1 02:43:07 g5 kernel: [    1.055699] MacIO PCI driver attached to K2 chipset
+Jan  1 02:43:07 g5 kernel: [    1.060140] 0.00013020:ch-a: ttyPZ0 at MMIO 0x80013020 (irq = 22, base_baud = 230400) is a Z85c30 ESCC - Serial port
+Jan  1 02:43:07 g5 kernel: [    1.067771] 0.00013000:ch-b: ttyPZ1 at MMIO 0x80013000 (irq = 23, base_baud = 230400) is a Z85c30 ESCC - Serial port
+Jan  1 02:43:07 g5 kernel: [    1.075676] pata-pci-macio 0001:03:0d.0: enabling device (0014 -> 0016)
+Jan  1 02:43:07 g5 kernel: [    1.094906] pata-pci-macio 0001:03:0d.0: Activating pata-macio chipset K2 ATA-6, Apple bus ID 3
+Jan  1 02:43:07 g5 kernel: [    1.103107] scsi0 : pata_macio
+Jan  1 02:43:07 g5 kernel: [    1.107022] ata1: PATA max UDMA/100 irq 39
+Jan  1 02:43:07 g5 kernel: [    1.111103] mousedev: PS/2 mouse device common for all mice
+Jan  1 02:43:07 g5 kernel: [    1.115345] rtc-generic rtc-generic: rtc core: registered rtc-generic as rtc0
+Jan  1 02:43:07 g5 kernel: [    1.119262] PowerMac i2c bus pmu 2 registered
+Jan  1 02:43:07 g5 kernel: [    1.123126] PowerMac i2c bus pmu 1 registered
+Jan  1 02:43:07 g5 kernel: [    1.126953] PowerMac i2c bus mac-io 0 registered
+Jan  1 02:43:07 g5 kernel: [    1.131180] PowerMac i2c bus u3 1 registered
+Jan  1 02:43:07 g5 kernel: [    1.135027] i2c i2c-3: i2c-powermac: modalias failure on /u3@0,f8000000/i2c@f8001000/cereal@1c0
+Jan  1 02:43:07 g5 kernel: [    1.142573] PowerMac i2c bus u3 0 registered
+Jan  1 02:43:07 g5 kernel: [    1.183780] Registering G5 CPU frequency driver
+Jan  1 02:43:07 g5 kernel: [    1.189408] Frequency method: i2c/pfunc, Voltage method: i2c/pfunc
+Jan  1 02:43:07 g5 kernel: [    1.195068] Low: 1304 Mhz, High: 2000 Mhz, Cur: 1304 MHz
+Jan  1 02:43:07 g5 kernel: [    1.213233] ledtrig-cpu: registered to indicate activity on CPUs
+Jan  1 02:43:07 g5 kernel: [    1.216986] TCP: cubic registered
+Jan  1 02:43:07 g5 kernel: [    1.220620] NET: Registered protocol family 10
+Jan  1 02:43:07 g5 kernel: [    1.224570] mip6: Mobile IPv6
+Jan  1 02:43:07 g5 kernel: [    1.228004] NET: Registered protocol family 17
+Jan  1 02:43:07 g5 kernel: [    1.231444] mpls_gso: MPLS GSO support
+Jan  1 02:43:07 g5 kernel: [    1.234915] PM: Registered nosave memory: [mem 0x7f000000-0x7fffffff]
+Jan  1 02:43:07 g5 kernel: [    1.238772] registered taskstats version 1
+Jan  1 02:43:07 g5 kernel: [    1.242929] input: PMU as /devices/virtual/input/input0
+Jan  1 02:43:07 g5 kernel: [    1.246800] rtc-generic rtc-generic: setting system clock to 1970-01-01 01:42:42 UTC (6162)
+Jan  1 02:43:07 g5 kernel: [    1.253723] PM: Hibernation image not present or could not be loaded.
+Jan  1 02:43:07 g5 kernel: [    1.275316] ata1.00: ATAPI: PIONEER DVD-RW  DVR-116D, 1.03, max UDMA/66
+Jan  1 02:43:07 g5 kernel: [    1.295261] ata1.00: configured for UDMA/66
+Jan  1 02:43:07 g5 kernel: [    1.305006] blk_queue_max_segment_size: set to minimum 65536
+Jan  1 02:43:07 g5 kernel: [    1.311563] scsi 0:0:0:0: CD-ROM            PIONEER  DVD-RW  DVR-116D 1.03 PQ: 0 ANSI: 5
+Jan  1 02:43:07 g5 kernel: [    1.318407] ata1.00: K2/Shasta alignment limits applied
+Jan  1 02:43:07 g5 kernel: [    1.332351] Freeing unused kernel memory: 960K (c000000000910000 - c000000000a00000)
+Jan  1 02:43:07 g5 kernel: [    1.387342] random: systemd-udevd urandom read with 7 bits of entropy available
+Jan  1 02:43:07 g5 kernel: [    1.433648] usbcore: registered new interface driver usbfs
+Jan  1 02:43:07 g5 kernel: [    1.443952] usbcore: registered new interface driver hub
+Jan  1 02:43:07 g5 kernel: [    1.454950] usbcore: registered new device driver usb
+Jan  1 02:43:07 g5 kernel: [    1.462198] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Jan  1 02:43:07 g5 kernel: [    1.472125] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Jan  1 02:43:07 g5 kernel: [    1.476176] ehci-pci: EHCI PCI platform driver
+Jan  1 02:43:07 g5 kernel: [    1.481659] ehci-pci 0001:02:0b.2: EHCI Host Controller
+Jan  1 02:43:07 g5 kernel: [    1.486357] firewire_ohci 0001:03:0e.0: enabling device (0000 -> 0002)
+Jan  1 02:43:07 g5 kernel: [    1.488765] sungem.c:v1.0 David S. Miller <davem@redhat.com>
+Jan  1 02:43:07 g5 kernel: [    1.491271] gem 0001:04:0f.0 eth0: Sun GEM (PCI) 10/100/1000BaseT Ethernet 00:0d:93:48:08:00
+Jan  1 02:43:07 g5 kernel: [    1.502385] ehci-pci 0001:02:0b.2: new USB bus registered, assigned bus number 1
+Jan  1 02:43:07 g5 kernel: [    1.504081] sata_svw 0001:05:0c.0: version 2.3
+Jan  1 02:43:07 g5 kernel: [    1.512524] ehci-pci 0001:02:0b.2: irq 63, io mem 0x80100000
+Jan  1 02:43:07 g5 kernel: [    1.516733] sr0: scsi3-mmc drive: 40x/40x writer cd/rw xa/form2 cdda tray
+Jan  1 02:43:07 g5 kernel: [    1.520728] cdrom: Uniform CD-ROM driver Revision: 3.20
+Jan  1 02:43:07 g5 kernel: [    1.522904] scsi1 : sata_svw
+Jan  1 02:43:07 g5 kernel: [    1.526902] ehci-pci 0001:02:0b.2: USB 2.0 started, EHCI 1.00
+Jan  1 02:43:07 g5 kernel: [    1.527149] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Jan  1 02:43:07 g5 kernel: [    1.527152] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jan  1 02:43:07 g5 kernel: [    1.527155] usb usb1: Product: EHCI Host Controller
+Jan  1 02:43:07 g5 kernel: [    1.527157] usb usb1: Manufacturer: Linux 3.16.0-4-powerpc64 ehci_hcd
+Jan  1 02:43:07 g5 kernel: [    1.527159] usb usb1: SerialNumber: 0001:02:0b.2
+Jan  1 02:43:07 g5 kernel: [    1.555616] hub 1-0:1.0: USB hub found
+Jan  1 02:43:07 g5 kernel: [    1.555637] sr 0:0:0:0: Attached scsi CD-ROM sr0
+Jan  1 02:43:07 g5 kernel: [    1.557466] sr 0:0:0:0: Attached scsi generic sg0 type 5
+Jan  1 02:43:07 g5 kernel: [    1.563529] hub 1-0:1.0: 5 ports detected
+Jan  1 02:43:07 g5 kernel: [    1.567374] scsi2 : sata_svw
+Jan  1 02:43:07 g5 kernel: [    1.571023] firewire_ohci 0001:03:0e.0: added OHCI v1.0 device as card 0, 8 IR + 8 IT contexts, quirks 0x0
+Jan  1 02:43:07 g5 kernel: [    1.580163] ohci-pci: OHCI PCI platform driver
+Jan  1 02:43:07 g5 kernel: [    1.580171] scsi3 : sata_svw
+Jan  1 02:43:07 g5 kernel: [    1.580416] scsi4 : sata_svw
+Jan  1 02:43:07 g5 kernel: [    1.580531] ata2: SATA max UDMA/133 mmio m8192@0x80600000 port 0x80600000 irq 17
+Jan  1 02:43:07 g5 kernel: [    1.580535] ata3: SATA max UDMA/133 mmio m8192@0x80600000 port 0x80600100 irq 17
+Jan  1 02:43:07 g5 kernel: [    1.580538] ata4: SATA max UDMA/133 mmio m8192@0x80600000 port 0x80600200 irq 17
+Jan  1 02:43:07 g5 kernel: [    1.580541] ata5: SATA max UDMA/133 mmio m8192@0x80600000 port 0x80600300 irq 17
+Jan  1 02:43:07 g5 kernel: [    1.620760] ohci-pci 0001:01:08.0: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.624634] ohci-pci 0001:01:08.0: new USB bus registered, assigned bus number 2
+Jan  1 02:43:07 g5 kernel: [    1.632354] ohci-pci 0001:01:08.0: irq 27, io mem 0x80081000
+Jan  1 02:43:07 g5 kernel: [    1.710953] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+Jan  1 02:43:07 g5 kernel: [    1.714764] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jan  1 02:43:07 g5 kernel: [    1.722218] usb usb2: Product: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.726026] usb usb2: Manufacturer: Linux 3.16.0-4-powerpc64 ohci_hcd
+Jan  1 02:43:07 g5 kernel: [    1.729867] usb usb2: SerialNumber: 0001:01:08.0
+Jan  1 02:43:07 g5 kernel: [    1.733931] hub 2-0:1.0: USB hub found
+Jan  1 02:43:07 g5 kernel: [    1.737653] hub 2-0:1.0: 2 ports detected
+Jan  1 02:43:07 g5 kernel: [    1.741644] ohci-pci 0001:01:09.0: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.745391] ohci-pci 0001:01:09.0: new USB bus registered, assigned bus number 3
+Jan  1 02:43:07 g5 kernel: [    1.752924] ohci-pci 0001:01:09.0: irq 28, io mem 0x80080000
+Jan  1 02:43:07 g5 kernel: [    1.830891] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001
+Jan  1 02:43:07 g5 kernel: [    1.834766] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jan  1 02:43:07 g5 kernel: [    1.842222] usb usb3: Product: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.846052] usb usb3: Manufacturer: Linux 3.16.0-4-powerpc64 ohci_hcd
+Jan  1 02:43:07 g5 kernel: [    1.850012] usb usb3: SerialNumber: 0001:01:09.0
+Jan  1 02:43:07 g5 kernel: [    1.854232] hub 3-0:1.0: USB hub found
+Jan  1 02:43:07 g5 kernel: [    1.858107] hub 3-0:1.0: 2 ports detected
+Jan  1 02:43:07 g5 kernel: [    1.862248] ohci-pci 0001:02:0b.0: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.865973] ohci-pci 0001:02:0b.0: new USB bus registered, assigned bus number 4
+Jan  1 02:43:07 g5 kernel: [    1.873224] ohci-pci 0001:02:0b.0: irq 63, io mem 0x80102000
+Jan  1 02:43:07 g5 kernel: [    1.950795] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001
+Jan  1 02:43:07 g5 kernel: [    1.954394] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jan  1 02:43:07 g5 kernel: [    1.961411] usb usb4: Product: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.964944] usb usb4: Manufacturer: Linux 3.16.0-4-powerpc64 ohci_hcd
+Jan  1 02:43:07 g5 kernel: [    1.968500] usb usb4: SerialNumber: 0001:02:0b.0
+Jan  1 02:43:07 g5 kernel: [    1.972312] hub 4-0:1.0: USB hub found
+Jan  1 02:43:07 g5 kernel: [    1.975790] hub 4-0:1.0: 3 ports detected
+Jan  1 02:43:07 g5 kernel: [    1.979457] ohci-pci 0001:02:0b.1: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    1.982836] ohci-pci 0001:02:0b.1: new USB bus registered, assigned bus number 5
+Jan  1 02:43:07 g5 kernel: [    1.989613] ohci-pci 0001:02:0b.1: irq 63, io mem 0x80101000
+Jan  1 02:43:07 g5 kernel: [    2.066790] usb usb5: New USB device found, idVendor=1d6b, idProduct=0001
+Jan  1 02:43:07 g5 kernel: [    2.070383] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jan  1 02:43:07 g5 kernel: [    2.077428] usb usb5: Product: OHCI PCI host controller
+Jan  1 02:43:07 g5 kernel: [    2.080976] usb usb5: Manufacturer: Linux 3.16.0-4-powerpc64 ohci_hcd
+Jan  1 02:43:07 g5 kernel: [    2.082273] firewire_core 0001:03:0e.0: created device fw0: GUID 000d93fffe480800, S800
+Jan  1 02:43:07 g5 kernel: [    2.091616] usb usb5: SerialNumber: 0001:02:0b.1
+Jan  1 02:43:07 g5 kernel: [    2.095566] hub 5-0:1.0: USB hub found
+Jan  1 02:43:07 g5 kernel: [    2.099325] hub 5-0:1.0: 2 ports detected
+Jan  1 02:43:07 g5 kernel: [    2.206925] ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+Jan  1 02:43:07 g5 kernel: [    2.215393] ata2.00: ATA-7: Hitachi HTS541640J9SA00, SB1OC74P, max UDMA/100
+Jan  1 02:43:07 g5 kernel: [    2.218999] ata2.00: 78140160 sectors, multi 16: LBA48 NCQ (depth 0/32)
+Jan  1 02:43:07 g5 kernel: [    2.235373] ata2.00: configured for UDMA/100
+Jan  1 02:43:07 g5 kernel: [    2.239181] scsi 1:0:0:0: Direct-Access     ATA      Hitachi HTS54164 C74P PQ: 0 ANSI: 5
+Jan  1 02:43:07 g5 kernel: [    2.247260] scsi 1:0:0:0: Attached scsi generic sg1 type 0
+Jan  1 02:43:07 g5 kernel: [    2.434930] usb 4-2: new low-speed USB device number 2 using ohci-pci
+Jan  1 02:43:07 g5 kernel: [    2.581898] ata3: SATA link down (SStatus 4 SControl 300)
+Jan  1 02:43:07 g5 kernel: [    2.674879] usb 4-2: New USB device found, idVendor=09da, idProduct=0260
+Jan  1 02:43:07 g5 kernel: [    2.678587] usb 4-2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Jan  1 02:43:07 g5 kernel: [    2.682298] usb 4-2: Product: USB Keyboard
+Jan  1 02:43:07 g5 kernel: [    2.685945] usb 4-2: Manufacturer:  
+Jan  1 02:43:07 g5 kernel: [    2.697634] hidraw: raw HID events driver (C) Jiri Kosina
+Jan  1 02:43:07 g5 kernel: [    2.737484] usbcore: registered new interface driver usbhid
+Jan  1 02:43:07 g5 kernel: [    2.741278] usbhid: USB HID core driver
+Jan  1 02:43:07 g5 kernel: [    2.747182] input:   USB Keyboard as /devices/pci0001:00/0001:00:04.0/0001:02:0b.0/usb4/4-2/4-2:1.0/0003:09DA:0260.0001/input/input1
+Jan  1 02:43:07 g5 kernel: [    2.755028] hid-generic 0003:09DA:0260.0001: input,hidraw0: USB HID v1.10 Keyboard [  USB Keyboard] on usb-0001:02:0b.0-2/input0
+Jan  1 02:43:07 g5 kernel: [    2.768045] input:   USB Keyboard as /devices/pci0001:00/0001:00:04.0/0001:02:0b.0/usb4/4-2/4-2:1.1/0003:09DA:0260.0002/input/input2
+Jan  1 02:43:07 g5 kernel: [    2.776157] hid-generic 0003:09DA:0260.0002: input,hidraw1: USB HID v1.10 Device [  USB Keyboard] on usb-0001:02:0b.0-2/input1
+Jan  1 02:43:07 g5 kernel: [    2.913907] ata4: SATA link down (SStatus 4 SControl 300)
+Jan  1 02:43:07 g5 kernel: [    3.245890] ata5: SATA link down (SStatus 4 SControl 300)
+Jan  1 02:43:07 g5 kernel: [    3.260858] sd 1:0:0:0: [sda] 78140160 512-byte logical blocks: (40.0 GB/37.2 GiB)
+Jan  1 02:43:07 g5 kernel: [    3.268964] sd 1:0:0:0: [sda] Write Protect is off
+Jan  1 02:43:07 g5 kernel: [    3.273059] sd 1:0:0:0: [sda] Mode Sense: 00 3a 00 00
+Jan  1 02:43:07 g5 kernel: [    3.273097] sd 1:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Jan  1 02:43:07 g5 kernel: [    3.680394]  sda: [mac] sda1 sda2 sda3 sda4 sda5 sda6 sda7 sda8 sda9
+Jan  1 02:43:07 g5 kernel: [    3.686384] sd 1:0:0:0: [sda] Attached SCSI disk
+Jan  1 02:43:07 g5 kernel: [    4.493180] PM: Starting manual resume from disk
+Jan  1 02:43:07 g5 kernel: [    4.501248] PM: Hibernation image partition 8:6 present
+Jan  1 02:43:07 g5 kernel: [    4.501251] PM: Looking for hibernation image.
+Jan  1 02:43:07 g5 kernel: [    4.502100] PM: Image not found (code -22)
+Jan  1 02:43:07 g5 kernel: [    4.502105] PM: Hibernation image not present or could not be loaded.
+Jan  1 02:43:07 g5 kernel: [    5.956402] random: nonblocking pool is initialized
+Jan  1 02:43:07 g5 kernel: [    6.391558] EXT4-fs (sda5): mounted filesystem with ordered data mode. Opts: (null)
+Jan  1 02:43:07 g5 kernel: [   10.132172] fuse init (API version 7.23)
+Jan  1 02:43:07 g5 kernel: [   13.156532] EXT4-fs (sda5): re-mounted. Opts: errors=remount-ro
+Jan  1 02:43:07 g5 kernel: [   13.322122] snd-aoa-codec-tas: tas found, addr 0x35 on /ht@0,f2000000/pci@3/mac-io@7/i2c@18000/deq@6a
+Jan  1 02:43:07 g5 kernel: [   13.821449] windfarm: Initializing for desktop G5 with 2 chips
+Jan  1 02:43:07 g5 kernel: [   13.978600] windfarm: CPUs control loops started.
+Jan  1 02:43:07 g5 kernel: [   13.981763] wf_pm72: Backside control loop started.
+Jan  1 02:43:07 g5 kernel: [   13.984826] wf_pm72: Drive bay control loop started.
+Jan  1 02:43:07 g5 kernel: [   14.165669] [drm] Initialized drm 1.1.0 20060810
+Jan  1 02:43:07 g5 kernel: [   15.678678] checking generic (98004000 78000) vs hw (98000000 8000000)
+Jan  1 02:43:07 g5 kernel: [   15.678686] fb: switching to nouveaufb from OFfb NVDA,Displ
+Jan  1 02:43:07 g5 kernel: [   15.682555] Console: switching to colour dummy device 80x25
+Jan  1 02:43:07 g5 kernel: [   15.684483] nouveau  [  DEVICE][0000:f0:10.0] BOOT0  : 0x034100b1
+Jan  1 02:43:07 g5 kernel: [   15.684502] nouveau  [  DEVICE][0000:f0:10.0] Chipset: NV34 (NV34)
+Jan  1 02:43:07 g5 kernel: [   15.684509] nouveau  [  DEVICE][0000:f0:10.0] Family : NV30
+Jan  1 02:43:07 g5 kernel: [   15.684564] nouveau  [   VBIOS][0000:f0:10.0] checking OpenFirmware for image...
+Jan  1 02:43:07 g5 kernel: [   15.684588] nouveau  [   VBIOS][0000:f0:10.0] ... checksum invalid
+Jan  1 02:43:07 g5 kernel: [   15.684594] nouveau  [   VBIOS][0000:f0:10.0] checking PRAMIN for image...
+Jan  1 02:43:07 g5 kernel: [   15.684604] nouveau  [   VBIOS][0000:f0:10.0] ... signature not found
+Jan  1 02:43:07 g5 kernel: [   15.684610] nouveau  [   VBIOS][0000:f0:10.0] checking PROM for image...
+Jan  1 02:43:07 g5 kernel: [   15.726773] nouveau  [   VBIOS][0000:f0:10.0] ... checksum invalid
+Jan  1 02:43:07 g5 kernel: [   15.726781] nouveau  [   VBIOS][0000:f0:10.0] checking ACPI for image...
+Jan  1 02:43:07 g5 kernel: [   15.726789] nouveau  [   VBIOS][0000:f0:10.0] ... signature not found
+Jan  1 02:43:07 g5 kernel: [   15.726795] nouveau  [   VBIOS][0000:f0:10.0] checking PCIROM for image...
+Jan  1 02:43:07 g5 kernel: [   15.726867] nouveau 0000:f0:10.0: Invalid ROM contents
+Jan  1 02:43:07 g5 kernel: [   15.727829] nouveau  [   VBIOS][0000:f0:10.0] ... signature not found
+Jan  1 02:43:07 g5 kernel: [   15.727847] nouveau  [   VBIOS][0000:f0:10.0] checking PLATFORM for image...
+Jan  1 02:43:07 g5 kernel: [   15.727855] nouveau  [   VBIOS][0000:f0:10.0] ... signature not found
+Jan  1 02:43:07 g5 kernel: [   15.727861] nouveau  [   VBIOS][0000:f0:10.0] using image from OpenFirmware
+Jan  1 02:43:07 g5 kernel: [   15.727870] nouveau  [   VBIOS][0000:f0:10.0] BMP version 5.27
+Jan  1 02:43:07 g5 kernel: [   15.727889] nouveau  [   VBIOS][0000:f0:10.0] version 04.34.20.19.00
+Jan  1 02:43:07 g5 kernel: [   15.729218] nouveau W[  PTIMER][0000:f0:10.0] unknown input clock freq
+Jan  1 02:43:07 g5 kernel: [   15.729280] nouveau  [     PFB][0000:f0:10.0] RAM type: DDR1
+Jan  1 02:43:07 g5 kernel: [   15.729287] nouveau  [     PFB][0000:f0:10.0] RAM size: 64 MiB
+Jan  1 02:43:07 g5 kernel: [   15.729293] nouveau  [     PFB][0000:f0:10.0]    ZCOMP: 0 tags
+Jan  1 02:43:07 g5 kernel: [   15.736340] nouveau  [     CLK][0000:f0:10.0] --:   
+Jan  1 02:43:07 g5 kernel: [   15.736655] [TTM] Zone  kernel: Available graphics memory: 1254560 kiB
+Jan  1 02:43:07 g5 kernel: [   15.736665] [TTM] Initializing pool allocator
+Jan  1 02:43:07 g5 kernel: [   15.736714] nouveau  [     DRM] VRAM: 63 MiB
+Jan  1 02:43:07 g5 kernel: [   15.736720] nouveau  [     DRM] GART: 128 MiB
+Jan  1 02:43:07 g5 kernel: [   15.736770] nouveau  [     DRM] BMP version 5.39
+Jan  1 02:43:07 g5 kernel: [   15.736778] nouveau  [     DRM] DCB version 2.2
+Jan  1 02:43:07 g5 kernel: [   15.736786] nouveau  [     DRM] DCB outp 00: 01100102 00000000
+Jan  1 02:43:07 g5 kernel: [   15.736793] nouveau  [     DRM] DCB outp 01: 01000100 000088b8
+Jan  1 02:43:07 g5 kernel: [   15.736800] nouveau  [     DRM] DCB outp 02: 02110212 11b00000
+Jan  1 02:43:07 g5 kernel: [   15.736806] nouveau  [     DRM] DCB outp 03: 02010210 11b088b8
+Jan  1 02:43:07 g5 kernel: [   15.736812] nouveau  [     DRM] DCB outp 04: 02010211 11b00003
+Jan  1 02:43:07 g5 kernel: [   15.742165] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+Jan  1 02:43:07 g5 kernel: [   15.742180] [drm] Driver supports precise vblank timestamp query.
+Jan  1 02:43:07 g5 kernel: [   15.744759] nouveau  [     DRM] MM: using M2MF for buffer copies
+Jan  1 02:43:07 g5 kernel: [   15.744798] nouveau  [     DRM] Setting dpms mode 3 on TV encoder (output 4)
+Jan  1 02:43:07 g5 kernel: [   15.830948] nouveau  [     DRM] Load detected on output B
+Jan  1 02:43:07 g5 kernel: [   15.831203] nouveau  [     DRM] allocated 720x576 fb: 0x30000, bo c000000118437380
+Jan  1 02:43:07 g5 kernel: [   15.852062] nouveau  [     DRM] Setting dpms mode 0 on TV encoder (output 4)
+Jan  1 02:43:07 g5 kernel: [   15.852074] nouveau  [     DRM] Output TV-1 is running on CRTC 1 using output B
+Jan  1 02:43:07 g5 kernel: [   15.852155] Console: switching to colour frame buffer device 90x36
+Jan  1 02:43:07 g5 kernel: [   15.853071] nouveau 0000:f0:10.0: fb0: nouveaufb frame buffer device
+Jan  1 02:43:07 g5 kernel: [   15.853086] nouveau 0000:f0:10.0: registered panic notifier
+Jan  1 02:43:07 g5 kernel: [   15.883154] [drm] Initialized nouveau 1.1.2 20120801 for 0000:f0:10.0 on minor 0
+Jan  1 02:43:07 g5 kernel: [   15.909533] nouveau E[   PFIFO][0000:f0:10.0] DMA_PUSHER - ch 0 [DRM] get 0x00010008 put 0x00000150 state 0x80006c10 (err: INVALID_CMD) push 0x00000000
+Jan  1 02:43:07 g5 kernel: [   16.005844] Adding 2047936k swap on /dev/sda6.  Priority:-1 extents:1 across:2047936k FS
+Jan  1 02:43:07 g5 kernel: [   16.419096] EXT4-fs (sda4): mounted filesystem with ordered data mode. Opts: (null)
+Jan  1 02:43:07 g5 kernel: [   18.130290] RPC: Registered named UNIX socket transport module.
+Jan  1 02:43:07 g5 kernel: [   18.130667] RPC: Registered udp transport module.
+Jan  1 02:43:07 g5 kernel: [   18.131068] RPC: Registered tcp transport module.
+Jan  1 02:43:07 g5 kernel: [   18.131370] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Jan  1 02:43:07 g5 kernel: [   18.181694] FS-Cache: Loaded
+Jan  1 02:43:07 g5 kernel: [   18.234372] FS-Cache: Netfs 'nfs' registered for caching
+Jan  1 02:43:07 g5 kernel: [   18.315036] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+Jan  1 02:43:07 g5 kernel: [   24.482091] cfg80211: Calling CRDA to update world regulatory domain
+Jan  1 02:43:07 g5 kernel: [   25.560428] cfg80211: World regulatory domain updated:
+Jan  1 02:43:07 g5 kernel: [   25.560765] cfg80211:  DFS Master region: unset
+Jan  1 02:43:07 g5 kernel: [   25.560777] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+Jan  1 02:43:07 g5 kernel: [   25.561582] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+Jan  1 02:43:07 g5 kernel: [   25.561847] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+Jan  1 02:43:07 g5 kernel: [   25.562113] cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)
+Jan  1 02:43:07 g5 kernel: [   25.562380] cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (N/A)
+Jan  1 02:43:07 g5 kernel: [   25.562973] cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (0 s)
+Jan  1 02:43:07 g5 kernel: [   25.563608] cfg80211:   (5490000 KHz - 5730000 KHz @ 160000 KHz), (N/A, 2000 mBm), (0 s)
+Jan  1 02:43:07 g5 kernel: [   25.564353] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+Jan  1 02:43:07 g5 kernel: [   25.564739] cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)
+Jan  1 02:43:08 g5 kernel: [   27.011263] sungem_phy: PHY ID: 2062e0, addr: 1
+Jan  1 02:43:08 g5 kernel: [   27.011528] gem 0001:04:0f.0 eth0: Found BCM5421-K2 PHY
+Jan  1 02:43:08 g5 kernel: [   27.011990] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Jan  1 02:43:09 g5 kernel: [   28.458889] nouveau  [     DRM] Load detected on output B
+Jan  1 02:43:09 g5 kernel: [   28.643018] nouveau  [     DRM] Load detected on output B
+Jan  1 02:43:10 g5 kernel: [   29.176302] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 2 [Xorg[860]] subc 3 mthd 0x0c00 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.176319] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 2 [Xorg[860]] subc 3 mthd 0x0c04 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.176329] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 2 [Xorg[860]] subc 3 mthd 0x0c08 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.272904] nouveau  [     DRM] Setting dpms mode 3 on TV encoder (output 4)
+Jan  1 02:43:10 g5 kernel: [   29.293236] nouveau  [     DRM] Setting dpms mode 0 on TV encoder (output 4)
+Jan  1 02:43:10 g5 kernel: [   29.293248] nouveau  [     DRM] Output TV-1 is running on CRTC 1 using output B
+Jan  1 02:43:10 g5 kernel: [   29.385387] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c00 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.385404] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c04 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.385414] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c08 data 0x00000000
+Jan  1 02:43:10 g5 kernel: [   29.419047] gem 0001:04:0f.0 eth0: Link is up at 100 Mbps, full-duplex
+Jan  1 02:43:10 g5 kernel: [   29.419179] gem 0001:04:0f.0 eth0: Pause is enabled (rxfifo: 10240 off: 7168 on: 5632)
+Jan  1 02:43:10 g5 kernel: [   29.419223] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Jan  1 02:43:11 g5 kernel: [   30.616844] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c0c data 0x00000000
+Jan  1 02:43:11 g5 kernel: [   30.616863] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c10 data 0x00000000
+Jan  1 02:43:11 g5 kernel: [   30.616874] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c14 data 0x00000000
+Jan  1 02:43:11 g5 kernel: [   30.616884] nouveau E[   PFIFO][0000:f0:10.0] CACHE_ERROR - ch 1 [Xorg[860]] subc 3 mthd 0x0c18 data 0x00000000
