@@ -23,19 +23,35 @@ parted /dev/sda
       4     256MB  16.4GB  16.1GB  ext4         root   root
            16.4GB   160GB   144GB  Free Space
 
-lsblk
+lsblk -o NAME,SIZE,UUID,LABEL
 
-    NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-    sr0     11:0    1  1024M  0 rom  
-    sda      8:0    0 149.1G  0 disk 
-    ├─sda4   8:4    0    15G  0 part /
-    ├─sda2   8:2    0    15M  0 part 
-    ├─sda5   8:5    0   992K  0 part 
-    ├─sda3   8:3    0   228M  0 part /boot
-    ├─sda1   8:1    0  31.5K  0 part 
-    └─sda6   8:6    0 133.8G  0 part 
+    NAME     SIZE UUID                                 LABEL
+    sr0     1024M                                      
+    sda    149.1G                                      
+    ├─sda4    15G 46026799-c14a-4ae0-98fd-d5d70cd21c4c ROOT
+    ├─sda2    15M                                      MAC_BOOT
+    ├─sda5   992K                                      
+    ├─sda3   228M 26507748-8918-49e0-9d3e-8e8c7b3da04d BOOT
+    ├─sda1  31.5K                                      
+    └─sda6 133.8G                                      
 
-# grub.img and blessing
+embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg via UUID, example:
+
+cat grub.cfg
+
+    search --no-floppy --fs-uuid --set=root 26507748-8918-49e0-9d3e-8e8c7b3da04d
+    set prefix=($root)/boot/grub2
+    configfile /boot/grub2/grub.cfg
+
+grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
+
+    grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
+
+grub.img can be cross-compiled on a 32bit HOST too
+
+this .img it's bigger than your default Apple_Bootstrap partition, so you have to make a bigger one, here I have 15M
+
+# mac-blessing with hfsutils
 hmount /dev/sda2
 
     Volume name is "MAC_BOOT"
@@ -55,6 +71,11 @@ hdir :
      f  tbxi/UNIX         0   1691400 Jan  1  1970 another_grub.img
 
 humount /dev/sda2
+
+# boot from OpenFirmware
+run grub from default HFS (Apple_Bootstrap) partition
+
+0 > boot hd:,grub
 
 # autoload modules
 cat /etc/sysconfig/modules/something.modules
