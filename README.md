@@ -36,36 +36,38 @@ parted /dev/sda
       4     256MB  16.4GB  16.1GB  ext4         root   root
            16.4GB   160GB   144GB  Free Space
 
-lsblk -o NAME,SIZE,UUID,LABEL
+lsblk -o NAME,FSTYPE,SIZE,LABEL,UUID -x NAME
 
-    NAME     SIZE UUID                                 LABEL
-    sr0     1024M                                      
-    sda    149.1G                                      
-    ├─sda4    15G 46026799-c14a-4ae0-98fd-d5d70cd21c4c ROOT
-    ├─sda2    15M                                      MAC_BOOT
-    ├─sda5   992K                                      
-    ├─sda3   228M 26507748-8918-49e0-9d3e-8e8c7b3da04d BOOT
-    ├─sda1  31.5K                                      
-    └─sda6 133.8G                                      
+    NAME FSTYPE   SIZE LABEL    UUID
+    sda         149.1G          
+    sda1         31.5K          
+    sda2 hfs       15M MAC_BOOT 
+    sda3 ext4     228M BOOT     26507748-8918-49e0-9d3e-8e8c7b3da04d
+    sda4 ext4      15G ROOT     46026799-c14a-4ae0-98fd-d5d70cd21c4c
+    sda5          992K          
+    sda6        133.8G          
+    sr0          1024M        
+                                   
 ### grub2
 - http://cynic.cc/blog/posts/running_grub2_on_powerpc_macs/
 - https://www.gnu.org/software/grub/manual/grub.html#Embedded-configuration
 
 grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
 
-embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
+* embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
 
 cat grub.cfg
 
     search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
     set prefix=($root)/grub2
     configfile /grub2/grub.cfg
+*note: paths here does not contain 'boot' since on my setup /boot is a mountpoint for / when linux is up.*
 
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
 
     grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
 
-check OpenFirmware path
+* check OpenFirmware path:
 
 grub2-ofpathname /dev/sda2
 
@@ -94,11 +96,33 @@ humount /dev/sda2
 
 # boot from OpenFirmware
 - www.netneurotic.de/mac/openfirmware.html
-- http://osxbook.com/book/bonus/ancient/whatismacosx/arch_boot.html
+- osxbook.com/book/bonus/ancient/whatismacosx/arch_boot.html
+- www.firmworks.com/QuickRef.html
 
-run grub from default HFS (Apple_Bootstrap) partition
+### manually
+enter OpenFirmware command prompt, run grub from default HFS (Apple_Bootstrap) partition:
 
     0 > boot hd:,grub
+
+### auto
+store in nvram your default, OpenFirmware looks at first HFS partition, we have grub2 image there:
+
+* from OpenFirmware:
+
+    0 > printenv ok
+    will display nvram values, to set:
+    0 > setenv boot-volume 2 ok
+    0 > setenv boot-device hd:,grub ok
+    0 > setenv boot-file grub ok
+
+* from linux:
+
+    nvram --print-config --partitions
+    will display nvram values plus OpenFirmware known partitions, to set:
+    nvram --update-config boot-volume 2 -p "common"
+    nvram --update-config boot-device hd:,grub -p "common"
+    nvram --update-config boot-file grub -p "common"
+*note: man nvram is some chars away...*
 
 # linux
 cat /etc/fedora-release
