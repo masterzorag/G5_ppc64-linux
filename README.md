@@ -58,8 +58,8 @@ embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
 cat grub.cfg
 
     search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
-    set prefix=($root)/boot/grub2
-    configfile /boot/grub2/grub.cfg
+    set prefix=($root)/grub2
+    configfile /grub2/grub.cfg
 
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
 
