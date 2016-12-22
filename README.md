@@ -107,7 +107,7 @@ enter OpenFirmware command prompt, run grub from default HFS (Apple_Bootstrap) p
 ### auto
 store in nvram your default, OpenFirmware looks at first HFS partition, we have grub2 image there:
 
-* from OpenFirmware:
+. from OpenFirmware:
 
     0 > printenv ok
     will display nvram values, to set:
@@ -115,7 +115,7 @@ store in nvram your default, OpenFirmware looks at first HFS partition, we have 
     0 > setenv boot-device hd:,grub ok
     0 > setenv boot-file grub ok
 
-* from linux:
+. from linux:
 
     nvram --print-config --partitions
     will display nvram values plus OpenFirmware known partitions, to set:
