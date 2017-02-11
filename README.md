@@ -1,4 +1,4 @@
-# Linux on a G5 ppc64
+# Linux on a Power Mac G5, ppc64
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![master](https://img.shields.io/badge/Contains-Binaries-bb11ff.svg)]()  
 - http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
