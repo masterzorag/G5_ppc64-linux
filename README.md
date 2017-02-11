@@ -1,4 +1,6 @@
 # Linux on a G5 ppc64
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![master](https://img.shields.io/badge/Contains-Binaries-bb11ff.svg)]()  
 - http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
 
 Fedora 25
@@ -10,6 +12,18 @@ Debian 8.6.0
 - http://cdimage.debian.org/debian-cd/8.6.0/powerpc/iso-cd/debian-8.6.0-powerpc-netinst.iso
 
 # boot setup
+This section decribe a working boot setup by using an updated GRUB as default bootloader (no need for yaboot).  
+*Note: Tools must work for Big Endian machines, writing data accordingly, setups written by Little Endians machines will be swapped.*  
+
+Booting an installer directly on TARGET can leave you in an unbootable system:
+- Debian installer will do the job and will fail at configuring yaboot setup
+- Fedora installer will fail at missing required yaboot
+
+We can do a full manual setup, we need:
+- kernelspace and userspace support to edit mac partition, for ppc64
+- a bootable grub image, for ppc64
+- hfs-util, for ppc64
+
 
 ### partition map
 OpenFirmare load the default ofprogram from the first HFS partition (Apple_Bootstrap) from a mac partition table.
@@ -61,7 +75,7 @@ cat grub.cfg
     search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
     set prefix=($root)/grub2
     configfile /grub2/grub.cfg
-*note: paths here does not contain 'boot' since on my setup /boot is a mountpoint for / when linux is up.*
+*Note: paths here does not contain 'boot' since on my setup /boot is a mountpoint for / when linux is up.*
 
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
 
@@ -122,7 +136,7 @@ store in nvram your default, OpenFirmware looks at first HFS partition, we have 
     nvram --update-config boot-volume 2 -p "common"
     nvram --update-config boot-device hd:,grub -p "common"
     nvram --update-config boot-file grub -p "common"
-*note: man nvram is some chars away...*
+*Note: man nvram is some chars away...*
 
 # linux
 cat /etc/fedora-release
