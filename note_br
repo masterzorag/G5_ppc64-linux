@@ -1,56 +1,53 @@
-
 blackbox ~ # login user
 
-'$ mkdir ppc64-br && cd ppc64-br'
-(Note: from now on, here we stay)
+$ mkdir ppc64-br && cd ppc64-br
 
 $ wget https://buildroot.uclibc.org/downloads/snapshots/buildroot-snapshot.tar.bz2
 
 $ tar xf buildroot-snapshot.tar.bz2
 $ cd buildroot
 
-* we build out-of-tree, just setup once!
+
+* We build out-of-tree, just setup once!
 $ make O=/Storage/home/user/ppc64-br help
 
-* move back, now we have the Makefile to build out-of-tree!
+* Move back, now we have the Makefile to build out-of-tree!
 $ cd ..
 
 ### we TARGET a (real or emulated) pp64
-* import a cfg
+* Import a cfg
 make defconfig BR2_DEFCONFIG=/home/user/buildroot/defconfig
 
-# make changes
+* Make changes
 make menuconfig
-
-
 
 ### build
 $ make
+* We got kernel and initramfs as compressed cpio!
+
 
 ### Optional
-
-* strip kernel
+* Strip kernel
 $ export PATH=${PATH}:$(pwd)/host/usr/bin
 $ powerpc64-linux-strip -s images/vmlinux
 
-* or
+* Or
 $ host/usr/bin/powerpc64-linux-strip -s images/vmlinux
 
-* we got kernel and initramfs as compressed cpio!
 
 ### Booting on real TARGET
-* use current bootload (yaboot, GRUB2)
-* booting from OpenFirmware (Forth command prompt, TFTP)
-* 
+* Use current bootload (yaboot, GRUB2)
+* From OpenFirmware (Forth command prompt, TFTP)
+
 
 ### Emulating
-* test on emulated TARGET qemu
+* Test on emulated qemu-system-TARGET
 qemu-system-ppc64 \
   -kernel images/vmlinux
   -initrd images/rootfs.cpio.xz \
-	-vnc :2 -vga std -m 512 \
-	-netdev user,id=net0 -device virtio-net-pci,netdev=net0 \
+  -vnc :2 -vga std -m 512 \
+  -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \
   -device virtio-keyboard-pci
-  
-### Bootstrap Fedora ppc64
-* todo
+
+### Now bootstrap Fedora ppc64
+* Todo
