@@ -7,9 +7,11 @@ $ wget https://buildroot.uclibc.org/downloads/snapshots/buildroot-snapshot.tar.b
 $ tar xf buildroot-snapshot.tar.bz2
 $ cd buildroot
 
+* check and pass absolute path below
+$ pwd
 
 * We build out-of-tree, just setup once!
-$ make O=/Storage/home/user/ppc64-br help
+$ make O=/Storage/home/user/ppc64-br
 
 * Move back, now we have the Makefile to build out-of-tree!
 $ cd ..
