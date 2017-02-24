@@ -1,4 +1,5 @@
-# Linux on a Power Mac G5, ppc64
+Linux on a PowerMac G5, ppc64
+===
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![master](https://img.shields.io/badge/Contains-Binaries-bb11ff.svg)]()  
 - http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
@@ -24,14 +25,14 @@ We can do a full manual setup, we need:
 - a bootable grub image, for ppc64
 - hfs-util, for ppc64
 
+**_I'm using buildroot to build a minimal kernel + initrd with needed tools to perform this tasks_**
 
 ### partition map
 OpenFirmare load the default ofprogram from the first HFS partition (Apple_Bootstrap) from a mac partition table.
 
 below I use about 16M on sda2 due default partition is smaller to store grub2 image later.
-
-parted /dev/sda
-   
+```sh
+   parted /dev/sda
     GNU Parted 3.2
     Using /dev/sda
     Welcome to GNU Parted! Type 'help' to view a list of commands.
@@ -49,7 +50,9 @@ parted /dev/sda
       3    16.8MB   256MB   239MB  ext4
       4     256MB  16.4GB  16.1GB  ext4         root   root
            16.4GB   160GB   144GB  Free Space
+```
 
+```sh
 lsblk -o NAME,FSTYPE,SIZE,LABEL,UUID -x NAME
 
     NAME FSTYPE   SIZE LABEL    UUID
@@ -61,7 +64,7 @@ lsblk -o NAME,FSTYPE,SIZE,LABEL,UUID -x NAME
     sda5          992K          
     sda6        133.8G          
     sr0          1024M        
-                                   
+```                             
 ### grub2
 - http://cynic.cc/blog/posts/running_grub2_on_powerpc_macs/
 - https://www.gnu.org/software/grub/manual/grub.html#Embedded-configuration
@@ -115,27 +118,27 @@ humount /dev/sda2
 
 ### manually
 enter OpenFirmware command prompt, run grub from default HFS (Apple_Bootstrap) partition:
-
-    0 > boot hd:,grub
+`0 > boot hd:,grub`  
 
 ### auto
 store in nvram your default, OpenFirmware looks at first HFS partition, we have grub2 image there:
 
-. from OpenFirmware:
-
-    0 > printenv ok
-    will display nvram values, to set:
-    0 > setenv boot-volume 2 ok
-    0 > setenv boot-device hd:,grub ok
-    0 > setenv boot-file grub ok
-
-. from linux:
-
-    nvram --print-config --partitions
-    will display nvram values plus OpenFirmware known partitions, to set:
-    nvram --update-config boot-volume 2 -p "common"
-    nvram --update-config boot-device hd:,grub -p "common"
-    nvram --update-config boot-file grub -p "common"
+* from OpenFirmware:
+```
+0 > printenv ok
+will display nvram values, to set:
+0 > setenv boot-volume 2 ok
+0 > setenv boot-device hd:,grub ok
+0 > setenv boot-file grub ok
+```
+* from linux:
+```sh
+nvram --print-config --partitions
+will display nvram values plus OpenFirmware known partitions, to set:
+nvram --update-config boot-volume 2 -p "common"
+nvram --update-config boot-device hd:,grub -p "common"
+nvram --update-config boot-file grub -p "common"
+```
 *Note: man nvram is some chars away...*
 
 # linux
