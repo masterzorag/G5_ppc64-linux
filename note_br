@@ -1,36 +1,37 @@
 blackbox ~ # login user
 
-$ mkdir ppc64-br && cd ppc64-br
+* Setup output folder
+$ mkdir br_ppc64
 
+* Get sources
 $ wget https://buildroot.uclibc.org/downloads/snapshots/buildroot-snapshot.tar.bz2
 
+* Extract
 $ tar xf buildroot-snapshot.tar.bz2
+
+* Move into
 $ cd buildroot
 
-* check and pass absolute path below
-$ pwd
-
-* We build out-of-tree, just setup once!
-$ make O=/Storage/home/user/ppc64-br
+* We build out-of-tree, just setup once, don't bother saving now
+$ make O=/path/to/your/output/folder
 
 * Move back, now we have the Makefile to build out-of-tree!
-$ cd ..
+$ cd ../br_ppc64
 
 ### we TARGET a (real or emulated) pp64
 * Import a cfg
-make defconfig BR2_DEFCONFIG=/home/user/buildroot/defconfig
+make defconfig BR2_DEFCONFIG=/path/to/valid/buildroot/defconfig
 
 * Make changes
 make menuconfig
 
 ### build
+* We build kernel and initramfs as compressed cpio
 $ make
-* We got kernel and initramfs as compressed cpio!
-
 
 ### Optional
 * Strip kernel
-$ export PATH=${PATH}:$(pwd)/host/usr/bin
+$ export PATH=${PATH}:/path/to/br_ppc64/host/usr/bin
 $ powerpc64-linux-strip -s images/vmlinux
 
 * Or
@@ -38,14 +39,14 @@ $ host/usr/bin/powerpc64-linux-strip -s images/vmlinux
 
 
 ### Booting on real TARGET
-* Use current bootload (yaboot, GRUB2)
+* Use current bootloaded (yaboot, GRUB2)
 * From OpenFirmware (Forth command prompt, TFTP)
 
 
 ### Emulating
 * Test on emulated qemu-system-TARGET
 qemu-system-ppc64 \
-  -kernel images/vmlinux
+  -kernel images/vmlinux \
   -initrd images/rootfs.cpio.xz \
   -vnc :2 -vga std -m 512 \
   -netdev user,id=net0 -device virtio-net-pci,netdev=net0 \
