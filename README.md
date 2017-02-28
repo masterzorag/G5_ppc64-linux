@@ -64,7 +64,10 @@ lsblk -o NAME,FSTYPE,SIZE,LABEL,UUID -x NAME
     sda5          992K          
     sda6        133.8G          
     sr0          1024M        
-```                             
+```
+Same result, from [Cockpit's point-of-view](https://cloud.githubusercontent.com/assets/8250079/23400282/c6106378-fda3-11e6-8c20-b649c5400043.png)
+
+
 ### grub2
 - http://cynic.cc/blog/posts/running_grub2_on_powerpc_macs/
 - https://www.gnu.org/software/grub/manual/grub.html#Embedded-configuration
