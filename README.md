@@ -25,7 +25,7 @@ We can do a full manual setup, we need:
 - a bootable grub image, for ppc64
 - hfs-util, for ppc64
 
-**_I'm using buildroot to build a minimal kernel + initrd with needed tools to perform this tasks_**
+**_I'm using buildroot to build a [minimal kernel + initrd with needed tools](https://github.com/masterzorag/buildroot-about/tree/master/br_ppc64/images) to perform this tasks_**
 
 ### partition map
 OpenFirmare load the default ofprogram from the first HFS partition (Apple_Bootstrap) from a mac partition table.
@@ -75,20 +75,19 @@ Same result, from [Cockpit's point-of-view](https://cloud.githubusercontent.com/
 grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
 
 * embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
-
+```sh
 cat grub.cfg
-
-    search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
-    set prefix=($root)/grub2
-    configfile /grub2/grub.cfg
+  search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
+  set prefix=($root)/grub2
+  configfile /grub2/grub.cfg
+```
 *Note: paths here does not contain 'boot' since on my setup /boot is a mountpoint for / when linux is up.*
-
+```sh
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
-
-    grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
-
-* check OpenFirmware path:
-
+file grub
+  grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
+```
+* Optional, check OpenFirmware path:
 grub2-ofpathname /dev/sda2
 
     /ht@0,f2000000/pci@7/k2-sata-root@c/disk@0:b
