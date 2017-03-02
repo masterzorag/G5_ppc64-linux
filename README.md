@@ -14,13 +14,15 @@ Debian 8.6.0
 
 # boot setup
 This section decribe a working boot setup by using an updated GRUB as default bootloader (no need for yaboot).  
-*Note: Tools must work for Big Endian machines, writing data accordingly, setups written by Little Endians machines will be swapped.*  
+*Notes:*  
+*- Tools must work for Big Endian machines, writing data accordingly, setups written by Little Endians machines will be swapped.*  
+*- This boot setup can be readed also as: "yaboot to grub2 bootloader migration"*  
 
 Booting an installer directly on TARGET can leave you in an unbootable system:
 - Debian installer will do the job and will fail at configuring yaboot setup
 - Fedora installer will fail at missing required yaboot
 
-We can do a full manual setup, we need:
+We can do a full manual setup, or modify installs, we need:
 - kernelspace and userspace support to edit mac partition, for ppc64
 - a bootable grub image, for ppc64
 - hfs-util, for ppc64
@@ -49,7 +51,7 @@ parted /dev/sda
     2    1049kB  16.8MB  15.7MB  hfs                 boot
     3    16.8MB   256MB   239MB  ext4
     4     256MB  16.4GB  16.1GB  ext4         root   root
-         16.4GB   160GB   144GB  Free Space
+    ...
 ```
 
 ```sh
@@ -61,9 +63,7 @@ lsblk -o NAME,FSTYPE,SIZE,LABEL,UUID -x NAME
   sda2 hfs       15M MAC_BOOT 
   sda3 ext4     228M BOOT     26507748-8918-49e0-9d3e-8e8c7b3da04d
   sda4 ext4      15G ROOT     46026799-c14a-4ae0-98fd-d5d70cd21c4c
-  sda5          992K          
-  sda6        133.8G          
-  sr0          1024M        
+  ...
 ```
 Same result, from [Cockpit's point-of-view](https://cloud.githubusercontent.com/assets/8250079/23400282/c6106378-fda3-11e6-8c20-b649c5400043.png)
 
@@ -74,24 +74,27 @@ Same result, from [Cockpit's point-of-view](https://cloud.githubusercontent.com/
 
 grub.img can be cross-compiled on a 32bit HOST too, checkout https://github.com/crosstool-ng/crosstool-ng
 
-* embed a grub.cfg that points to (...hd,apple3)\boot\grub2\grub.cfg using UUID:
+* Write a first grub.cfg that points to the final grub.cfg, located at (...hd,apple3)\boot\grub2\grub.cfg, using UUID:  
+*Note: paths here does not contain 'boot' since /boot is a mountpoint (to /dev/sda3 partition) for linux (ROOT on /dev/ sda4) when it's booted (off OpenFirmware).*
 ```sh
 cat grub.cfg
   search.fs_uuid 26507748-8918-49e0-9d3e-8e8c7b3da04d root
   set prefix=($root)/grub2
   configfile /grub2/grub.cfg
 ```
-*Note: paths here does not contain 'boot' since on my setup /boot is a mountpoint for / when linux is up.*
+* Build a GRUB2 image, embedding the configfile
 ```sh
 grub2-mkimage -c grub.cfg -o grub -O powerpc-ieee1275 -C xz -p /usr/lib/grub/powerpc-ieee1275/*.mod
 file grub
   grub: ELF 32-bit MSB executable, PowerPC or cisco 4500, version 1 (SYSV), statically linked, stripped
 ```
-* Optional, check OpenFirmware path:
+*This way, everytime OpenFirmware loads our GRUB, it will parse the configfile from /boot/grub2/grub.cfg*
+
+* Just for info, you can check OpenFirmware path from linux:
+```sh
 grub2-ofpathname /dev/sda2
-
-    /ht@0,f2000000/pci@7/k2-sata-root@c/disk@0:b
-
+  /ht@0,f2000000/pci@7/k2-sata-root@c/disk@0:b
+```
 ### mac-blessing with hfsutils
 ```sh
 hmount /dev/sda2
