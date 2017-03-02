@@ -185,7 +185,6 @@ cat /sys/devices/platform/windfarm.0/cpu-diode-temp-*
   31.604
     
 cat /proc/cpuinfo
-
   processor       : 0
   cpu             : PPC970, altivec supported
   clock           : 1304.400000MHz
@@ -205,4 +204,23 @@ cat /proc/cpuinfo
   pmac flags      : 00000000
   L2 cache        : 512K unified
   pmac-generation : NewWorld
+
+lscpu 
+  Architecture:          ppc64
+  CPU op-mode(s):        32-bit, 64-bit
+  Byte Order:            Big Endian
+  CPU(s):                2
+  On-line CPU(s) list:   0,1
+  Thread(s) per core:    1
+  Core(s) per socket:    1
+  Socket(s):             2
+  NUMA node(s):          1
+  Model:                 2.2 (pvr 0039 0202)
+  Model name:            PPC970, altivec supported
+  CPU max MHz:           2000.0000
+  CPU min MHz:           1304.4000
+  L1d cache:             32K
+  L1i cache:             64K
+  L2 cache:              512K
+  NUMA node0 CPU(s):     0,1
 ```
