@@ -4,6 +4,8 @@ Linux on a PowerMac G5, ppc64
 [![master](https://img.shields.io/badge/Contains-Binaries-bb11ff.svg)]()  
 - http://www.everymac.com/systems/apple/powermac_g5/specs/powermac_g5_2.0_dp_2.html
 
+<img src="/_assets/vncscreen.png" alt="VNC session" width="400" />
+
 Fedora 25
 - https://fedoraproject.org/wiki/Architectures/PowerPC
 - https://archive.fedoraproject.org/pub/fedora-secondary/releases/25/Everything/ppc64/iso/Fedora-Everything-netinst-ppc64-25-1.2.iso
